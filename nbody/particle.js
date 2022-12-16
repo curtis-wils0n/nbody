@@ -4,7 +4,7 @@ class Particle {
     this.vel = createVector(vx, vy);
     this.acc = createVector(0, 0);
     this.mass = m;
-    this.r = sqrt(this.mass) * 2;
+    this.r = 10;
   }
 
   applyForce(force) {
