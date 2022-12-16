@@ -8,10 +8,14 @@ function setup() {
     vel.setMag(random(10, 15));
     pos.setMag(random(100, 150));
     vel.rotate(PI / 2);
-    let m = random(1000, 2000);
+    let m = random(100, 200);
     particles[i] = new Particle(pos.x, pos.y, vel.x, vel.y, m);
   }
   background(0);
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
 }
 
 function draw() {
@@ -25,7 +29,7 @@ function draw() {
       }
     }
   }
-  translate(-((particles[0].pos.x + particles[1].pos.x + particles[2].pos.x)/3), -((particles[0].pos.y + particles[1].pos.y + particles[2].pos.y)/3))
+  translate(-((particles[0].pos.x + particles[1].pos.x + particles[2].pos.x)/3), -((particles[0].pos.y + particles[1].pos.y + particles[2].pos.y)/3));
   for (let particle of particles) {
     particle.update();
     particle.show();
